@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slider{
+    width: 100vw;
+    height: 100vh;
+    position : relative;
+    overflow:hidden;
+
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+.slide .content{
+    position: absolute;
+    padding: 20px;
+    color: #333333;
+    bottom: 10%;
+    background: rgba(255,255,255,0.8);
+    left: -600px;
+    width: 600px;
+    height: 200px;
+
+}
+.slide .content h1 {
+    margin-bottom: 30px;
+}
+.current {
+    opacity: 1;
+}
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(650px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #ffffff;
+    outline: none;
+}
+.buttons button:hover {
+    color: #333333;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.buttons .prev{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+
+.buttons .next{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+
+.slide:first-child {
+    background: url("./dist/image/image1.jpg") no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url("./dist/image/image2.jpeg") no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url("./dist/image/image3.jpg") no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url("./dist/image/image4.jpg") no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+    background: url("./dist/image/image5.jpg") no-repeat center center/cover;
+}
+
+.slide:nth-child(6) {
+    background: url("./dist/image/image6.jpeg") no-repeat center center/cover;
+}
+
+
+
+
+@media (max-width: 500px){
+    .slide .content{
+        bottom: -200px;
+        left: 0;
+        width: 100%;
+    }
+
+    .slide.current .content {
+
+        transform: translateY(-200px);
+
+    }
+}
